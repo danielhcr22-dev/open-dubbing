@@ -31,7 +31,8 @@ class SpeechToTextWhisperTransformers(SpeechToText):
         self._processor = None
 
     def load_model(self):
-        full_model_name = f"openai/whisper-{self.model_name}"
+        hf_name = "large-v3-turbo" if self.model_name == "turbo" else self.model_name
+        full_model_name = f"openai/whisper-{hf_name}"
         self._processor = WhisperProcessor.from_pretrained(full_model_name)
         self._model = WhisperForConditionalGeneration.from_pretrained(full_model_name)
 

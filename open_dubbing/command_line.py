@@ -18,6 +18,7 @@ WHISPER_MODEL_NAMES = [
     "medium",
     "large-v2",
     "large-v3",
+    "turbo",
 ]
 
 
